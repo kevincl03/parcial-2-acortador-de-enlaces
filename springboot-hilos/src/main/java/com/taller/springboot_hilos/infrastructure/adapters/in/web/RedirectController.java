@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.net.URI;
-import java.util.concurrent.CompletableFuture;
 
 @RestController
 public class RedirectController {
@@ -20,16 +19,14 @@ public class RedirectController {
     }
 
     @GetMapping("/{code}")
-    public CompletableFuture<ResponseEntity<Void>> redirect(@PathVariable String code) {
-        return CompletableFuture.supplyAsync(() -> {
-            try {
-                String originalUrl = linkUseCase.redirect(code);
-                return ResponseEntity.status(HttpStatus.FOUND)
-                        .location(URI.create(originalUrl))
-                        .build();
-            } catch (IllegalArgumentException e) {
-                return ResponseEntity.notFound().build();
-            }
-        });
+    public ResponseEntity<Void> redirect(@PathVariable String code) {
+        try {
+            String originalUrl = linkUseCase.redirect(code);
+            return ResponseEntity.status(HttpStatus.FOUND)
+                    .location(URI.create(originalUrl))
+                    .build();
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

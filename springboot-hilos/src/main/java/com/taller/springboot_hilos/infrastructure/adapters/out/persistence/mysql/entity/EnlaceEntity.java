@@ -15,10 +15,10 @@ public class EnlaceEntity {
     @Column(name = "idenlace")
     private Integer idenlace;
 
-    @Column(name = "enlace_original", columnDefinition = "TEXT")
+    @Column(name = "enlace_original", length = 2048)
     private String enlaceOriginal;
 
-    @Column(name = "enlace_acortado", columnDefinition = "TEXT")
+    @Column(name = "enlace_acortado", length = 50, unique = true)
     private String enlaceAcortado;
 
     public EnlaceEntity() {}

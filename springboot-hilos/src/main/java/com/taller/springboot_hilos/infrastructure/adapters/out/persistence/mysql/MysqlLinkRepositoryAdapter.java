@@ -26,7 +26,8 @@ public class MysqlLinkRepositoryAdapter implements LinkRepositoryPort {
             entity.setIdenlace(link.getId());
         }
         EnlaceEntity saved = repository.save(entity);
-        return toDomain(saved);
+        link.setId(saved.getIdenlace());
+        return link;
     }
 
     @Override

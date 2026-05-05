@@ -45,7 +45,10 @@ public class LinkService implements LinkUseCase {
             // Check cache first
             Optional<String> cachedShortUrl = linkCachePort.getShortenedUrlByOriginalUrl(originalUrl);
             if (cachedShortUrl.isPresent()) {
-                return getLinkByShortCode(cachedShortUrl.get()).orElseThrow();
+                Optional<Link> cachedLink = getLinkByShortCode(cachedShortUrl.get());
+                if (cachedLink.isPresent()) {
+                    return cachedLink.get();
+                }
             }
 
             // Check DB

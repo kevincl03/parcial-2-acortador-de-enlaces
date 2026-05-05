@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "69f99360bb6f6a2cde67967c"
+  },
+  "original_url": "https://www.mercadolibre.com.co/aspiradora-xiaomi-robot-vacuum-s40-pro-15000-pa-blanco/p/MCO64496709?pdp_filters=deal%3AMCO1554577-1#polycard_client=search-desktop&search_layout=grid&position=1&type=product&tracking_id=0ea7215a-0f58-4f1a-8062-de812a1b949a&wid=MCO1805206979&sid=search",
+  "url_imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_609716-MLA105179438909_012026-F.webp",
+  "descripcion_url": "ejemplo de descripcion para enlace",
+  "_class": "com.taller.springboot_hilos.infrastructure.adapters.out.persistence.mongodb.entity.EnlaceDocument"
+},
+{
+  "_id": {
+    "$oid": "69f9946ebb6f6a2cde67967d"
+  },
+  "original_url": "https://www.youtube.com/watch?v=p69TMjP35So&list=PLGQSYoAPO2ZHQr_EEWyYGTNIKwEi4JzMg",
+  "url_imagen": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png",
+  "descripcion_url": "ejemplo de descripcion para enlace logo yt",
+  "_class": "com.taller.springboot_hilos.infrastructure.adapters.out.persistence.mongodb.entity.EnlaceDocument"
+}]
