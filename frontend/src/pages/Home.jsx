@@ -69,7 +69,7 @@ function Home() {
 
   const copyToClipboard = () => {
     if (result) {
-      const urlToCopy = `http://localhost:8080/${result.enlace_acortado}`;
+      const urlToCopy = `http://localhost:8080/${result.enlace_acortado.replace(/^\/+/, '')}`;
       navigator.clipboard.writeText(urlToCopy);
       alert('¡Enlace copiado al portapapeles!');
     }
@@ -125,8 +125,8 @@ function Home() {
           <h3>¡Enlace acortado con éxito!</h3>
           <p>
             Tu enlace corto es: <br/>
-            <a href={`http://localhost:8080/${result.enlace_acortado}`} target="_blank" rel="noreferrer">
-              http://localhost:8080/{result.enlace_acortado}
+            <a href={`http://localhost:8080/${result.enlace_acortado.replace(/^\/+/, '')}`} target="_blank" rel="noreferrer">
+              http://localhost:8080/{result.enlace_acortado.replace(/^\/+/, '')}
             </a>
           </p>
           <button style={{marginTop: '1rem', background: '#28a745'}} onClick={copyToClipboard}>

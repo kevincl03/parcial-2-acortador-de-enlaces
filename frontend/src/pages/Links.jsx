@@ -62,8 +62,8 @@ function Links() {
                     </div>
                   </td>
                   <td>
-                    <a href={`http://localhost:8080/${link.enlace_acortado}`} target="_blank" rel="noreferrer">
-                      /{link.enlace_acortado}
+                    <a href={`http://localhost:8080/${link.enlace_acortado.replace(/^\/+/, '')}`} target="_blank" rel="noreferrer">
+                      /{link.enlace_acortado.replace(/^\/+/, '')}
                     </a>
                   </td>
                 </tr>
